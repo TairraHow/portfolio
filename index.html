@@ -7,416 +7,149 @@
 <title>Tairra Howard — Strategy, Performance & Operations</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green: #18453B;
-    --green2: #235C4E;
-    --green3: #2D7A65;
-    --green4: #E8F2EF;
-    --green5: #F2F8F6;
-    --white: #FFFFFF;
-    --gray1: #1A1A1A;
-    --gray2: #3C3C3C;
-    --gray3: #6B7B74;
-    --gray4: #97A89F;
-    --gray5: #E8EDEB;
-    --gray6: #F5F8F7;
-    --accent: #18453B;
-  }
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
-body {
-font-family: ‘DM Sans’, sans-serif;
-background: #FFFFFF;
-color: #1A1A1A;
-overflow-x: hidden;
-}
-
-/* NAV */
-nav {
-position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-background: rgba(255,255,255,0.95);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid #E8EDEB;
-display: flex; align-items: center; justify-content: space-between;
-padding: 0 48px; height: 64px;
-}
-.nav-logo {
-font-family: ‘Playfair Display’, serif;
-font-size: 20px; font-weight: 700;
-color: #18453B; letter-spacing: -0.5px;
-}
-.nav-links {
-display: flex; gap: 32px; list-style: none;
-}
-.nav-links a {
-font-size: 13px; font-weight: 500; color: #6B7B74;
-text-decoration: none; letter-spacing: 0.5px;
-text-transform: uppercase; transition: color 0.2s;
-}
+body { font-family: 'DM Sans', sans-serif; background: #FFFFFF; color: #1A1A1A; overflow-x: hidden; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid #E8EDEB; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #18453B; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 600; color: #6B7B74; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover { color: #18453B; }
-
-/* SECTIONS */
-section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
-
-/* HERO */
-.hero {
-min-height: 100vh; display: flex; align-items: center;
-padding-top: 120px; padding-bottom: 60px;
-max-width: 100%; margin: 0;
-position: relative; overflow: hidden;
-background: #FFFFFF;
-}
-.hero::before {
-content: ‘’;
-position: absolute; top: 0; right: 0;
-width: 45%; height: 100%;
-background: #F2F8F6;
-}
-.hero-inner {
-max-width: 1200px; margin: 0 auto;
-padding: 0 48px; width: 100%;
-position: relative; z-index: 1;
-display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-}
-.hero-eyebrow {
-display: inline-flex; align-items: center; gap: 10px;
-background: #E8F2EF; border: 1px solid rgba(24,69,59,0.15);
-border-radius: 100px; padding: 6px 16px;
-font-size: 12px; font-weight: 600; color: #18453B;
-letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
-}
-.hero-eyebrow::before {
-content: ‘’; width: 6px; height: 6px;
-background: #18453B; border-radius: 50%;
-}
-.hero-name {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(52px, 6vw, 80px);
-font-weight: 900; line-height: 1.0;
-color: #1A1A1A; letter-spacing: -2px;
-margin-bottom: 8px;
-}
+.hero-wrap { display: flex; min-height: 100vh; padding-top: 64px; }
+.hero-left { flex: 1; background: #FFFFFF; padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
+.hero-right { width: 45%; background: #F2F8F6; padding: 80px 48px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #E8F2EF; border: 1px solid rgba(24,69,59,0.2); border-radius: 100px; padding: 6px 16px; font-size: 11px; font-weight: 600; color: #18453B; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; width: fit-content; }
+.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #18453B; border-radius: 50%; flex-shrink: 0; }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(48px, 5vw, 76px); font-weight: 900; line-height: 1.0; color: #1A1A1A; letter-spacing: -2px; margin-bottom: 8px; }
 .hero-name span { color: #18453B; }
-.hero-title {
-font-size: 16px; font-weight: 400; color: #6B7B74;
-letter-spacing: 0.5px; margin-bottom: 32px;
-font-family: ‘DM Mono’, monospace;
-}
-.hero-statement {
-font-size: 19px; line-height: 1.7; color: #3C3C3C;
-font-weight: 300; max-width: 480px; margin-bottom: 40px;
-}
+.hero-title { font-size: 15px; color: #6B7B74; letter-spacing: 0.5px; margin-bottom: 28px; font-family: 'DM Mono', monospace; }
+.hero-statement { font-size: 18px; line-height: 1.7; color: #3C3C3C; font-weight: 300; max-width: 440px; margin-bottom: 36px; }
 .hero-statement strong { color: #18453B; font-weight: 600; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-primary {
-background: #18453B; color: #FFFFFF;
-padding: 14px 28px; border-radius: 8px;
-font-size: 14px; font-weight: 600; text-decoration: none;
-letter-spacing: 0.3px; transition: all 0.2s;
-border: 2px solid #18453B;
-}
-.btn-primary:hover { background: #235C4E; transform: translateY(-1px); }
-.btn-secondary {
-background: transparent; color: #18453B;
-padding: 14px 28px; border-radius: 8px; border: 2px solid #18453B;
-font-size: 14px; font-weight: 600; text-decoration: none;
-letter-spacing: 0.3px; transition: all 0.2s;
-}
-.btn-secondary:hover { background: #E8F2EF; transform: translateY(-1px); }
-
-/* HERO RIGHT — credential pills */
-.hero-right { display: flex; flex-direction: column; gap: 16px; }
-.credential-card {
-background: #FFFFFF; border: 1px solid #E8EDEB;
-border-radius: 12px; padding: 20px 24px;
-display: flex; align-items: center; gap: 16px;
-box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-transition: all 0.25s;
-}
-.credential-card:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(24,69,59,0.12); }
-.credential-icon {
-width: 44px; height: 44px; border-radius: 10px;
-background: #E8F2EF; display: flex; align-items: center;
-justify-content: center; font-size: 20px; flex-shrink: 0;
-}
-.credential-label { font-size: 11px; font-weight: 600; color: #97A89F; letter-spacing: 1px; text-transform: uppercase; }
-.credential-value { font-size: 15px; font-weight: 600; color: #1A1A1A; margin-top: 2px; }
-
-/* SECTION HEADER */
-.section-header { text-align: center; margin-bottom: 64px; }
-.section-eyebrow {
-font-family: ‘DM Mono’, monospace;
-font-size: 11px; font-weight: 500; color: #18453B;
-letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
-}
-.section-title {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(32px, 4vw, 48px); font-weight: 700;
-color: #1A1A1A; letter-spacing: -1px; margin-bottom: 16px;
-}
-.section-sub {
-font-size: 17px; color: #6B7B74; font-weight: 300;
-max-width: 560px; margin: 0 auto; line-height: 1.7;
-}
-
-/* DIVIDER */
-.divider {
-width: 100%; height: 1px; background: #E8EDEB;
-max-width: 1200px; margin: 0 auto;
-}
-
-/* IMPACT NUMBERS */
-.impact { background: #18453B !important; padding: 80px 48px; width: 100%; display: block; }
-.impact-inner { max-width: 1200px; margin: 0 auto; }
-.impact .section-eyebrow { color: rgba(255,255,255,0.6); }
-.impact .section-title { color: #FFFFFF; }
-.impact .section-sub { color: rgba(255,255,255,0.7); }
-.stats-grid {
-display: grid; grid-template-columns: repeat(3, 1fr);
-gap: 2px; background: rgba(255,255,255,0.1);
-border-radius: 16px; overflow: hidden; margin-top: 16px;
-}
-.stat-card {
-background: rgba(255,255,255,0.05);
-padding: 40px 32px; text-align: center;
-transition: background 0.2s;
-}
-.stat-card:hover { background: rgba(255,255,255,0.1); }
-.stat-tag {
-font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.5);
-letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
-font-family: ‘DM Mono’, monospace;
-}
-.stat-number {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(36px, 4vw, 52px); font-weight: 900;
-color: #FFFFFF; line-height: 1; margin-bottom: 8px;
-letter-spacing: -1px;
-}
-.stat-number.green-accent { color: #7EC8B0; }
-.stat-label { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); }
-.stat-context { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 6px; font-style: italic; }
-
-/* GROWTH STORY TIMELINE */
-.timeline { position: relative; padding-left: 32px; }
-.timeline::before {
-content: ‘’; position: absolute; left: 0; top: 0; bottom: 0;
-width: 2px; background: #E8EDEB;
-}
-.timeline-item {
-position: relative; margin-bottom: 48px;
-opacity: 0; transform: translateX(-20px);
-transition: all 0.5s ease;
-}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { background: #18453B; color: #FFFFFF; padding: 13px 26px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; border: 2px solid #18453B; }
+.btn-secondary { background: transparent; color: #18453B; padding: 13px 26px; border-radius: 8px; border: 2px solid #18453B; font-size: 14px; font-weight: 600; text-decoration: none; }
+.credential-card { background: #FFFFFF; border: 1px solid #E8EDEB; border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.credential-icon { width: 40px; height: 40px; border-radius: 8px; background: #E8F2EF; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.credential-label { font-size: 10px; font-weight: 600; color: #97A89F; letter-spacing: 1px; text-transform: uppercase; }
+.credential-value { font-size: 14px; font-weight: 600; color: #1A1A1A; margin-top: 2px; }
+.impact-wrap { background: #18453B; padding: 80px 64px; width: 100%; }
+.impact-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
+.section-sub { font-size: 16px; font-weight: 300; line-height: 1.7; max-width: 520px; margin: 0 auto 40px; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.12); border-radius: 16px; overflow: hidden; }
+.stat-card { background: rgba(255,255,255,0.05); padding: 36px 28px; text-align: center; }
+.stat-tag { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-family: 'DM Mono', monospace; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 900; color: #FFFFFF; line-height: 1; margin-bottom: 8px; letter-spacing: -1px; }
+.stat-number.accent { color: #7EC8B0; }
+.stat-label { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.75); }
+.stat-context { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; font-style: italic; }
+.content-section { padding: 80px 64px; max-width: 1200px; margin: 0 auto; }
+.divider { width: 100%; max-width: 1100px; margin: 0 auto; height: 1px; background: #E8EDEB; }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: #E8EDEB; }
+.timeline-item { position: relative; margin-bottom: 44px; opacity: 0; transform: translateX(-16px); transition: all 0.5s ease; }
 .timeline-item.visible { opacity: 1; transform: translateX(0); }
-.timeline-dot {
-position: absolute; left: -39px; top: 6px;
-width: 16px; height: 16px; border-radius: 50%;
-background: #FFFFFF; border: 2px solid #E8EDEB;
-transition: all 0.3s;
-}
-.timeline-item:hover .timeline-dot {
-background: #18453B; border-color: #18453B;
-box-shadow: 0 0 0 4px #E8F2EF;
-}
-.timeline-item.active .timeline-dot {
-background: #18453B; border-color: #18453B;
-box-shadow: 0 0 0 4px #E8F2EF;
-width: 20px; height: 20px; left: -41px; top: 4px;
-}
-.timeline-period {
-font-family: ‘DM Mono’, monospace;
-font-size: 11px; color: #97A89F; letter-spacing: 1px;
-text-transform: uppercase; margin-bottom: 8px;
-}
-.timeline-role {
-font-size: 18px; font-weight: 700; color: #1A1A1A; margin-bottom: 4px;
-}
-.timeline-company { font-size: 14px; color: #18453B; font-weight: 600; margin-bottom: 12px; }
-.timeline-desc { font-size: 15px; color: #6B7B74; line-height: 1.7; margin-bottom: 12px; }
-.timeline-proof {
-display: inline-flex; align-items: center; gap: 8px;
-background: #E8F2EF; border: 1px solid rgba(24,69,59,0.12);
-border-radius: 6px; padding: 6px 12px;
-font-size: 13px; font-weight: 600; color: #18453B;
-}
-
-/* THE PACKAGE */
-.package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; }
-.package-card {
-border: 1px solid #E8EDEB; border-radius: 16px;
-overflow: hidden; cursor: pointer;
-transition: all 0.3s; background: #FFFFFF;
-min-width: 0;
-}
-.package-card:hover { box-shadow: 0 8px 32px rgba(24,69,59,0.12); transform: translateY(-4px); }
-.package-card.expanded { grid-column: 1 / -1; }
-.package-card-header {
-background: #18453B; padding: 28px 24px;
-display: flex; align-items: flex-start; justify-content: space-between;
-}
-.package-card-icon { font-size: 28px; margin-bottom: 12px; }
-.package-card-title { font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
-.package-card-sub { font-size: 13px; color: rgba(255,255,255,0.7); }
-.package-expand-btn {
-width: 28px; height: 28px; border-radius: 50%;
-background: rgba(255,255,255,0.15); border: none;
-color: white; font-size: 16px; cursor: pointer;
-display: flex; align-items: center; justify-content: center;
-transition: all 0.2s; flex-shrink: 0;
-}
-.package-expand-btn:hover { background: rgba(255,255,255,0.25); }
-.package-card-body { padding: 24px; }
-.package-detail-row {
-display: flex; align-items: flex-start; gap: 12px;
-padding: 12px 0; border-bottom: 1px solid #E8EDEB;
-}
-.package-detail-row:last-child { border-bottom: none; }
-.package-detail-label {
-font-size: 10px; font-weight: 700; color: #18453B;
-letter-spacing: 1.5px; text-transform: uppercase;
-min-width: 80px; padding-top: 2px;
-font-family: ‘DM Mono’, monospace;
-}
-.package-detail-value { font-size: 14px; color: #3C3C3C; line-height: 1.6; }
-.package-expanded-content {
-display: none; padding: 0 24px 24px;
-background: #F2F8F6;
-border-top: 1px solid #E8EDEB;
-}
-.package-card.expanded .package-expanded-content { display: block; }
-
-/* ACCOMPLISHMENTS */
-.accomplishments-list { display: flex; flex-direction: column; gap: 16px; }
-.accomplishment {
-border: 1px solid #E8EDEB; border-radius: 12px;
-overflow: hidden; cursor: pointer; transition: all 0.3s;
-}
-.accomplishment:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-.accomplishment-header {
-display: flex; align-items: center; justify-content: space-between;
-padding: 20px 24px; background: #FFFFFF;
-}
-.accomplishment-header-left { display: flex; align-items: center; gap: 16px; }
-.accomplishment-num {
-font-family: ‘Playfair Display’, serif;
-font-size: 24px; font-weight: 900; color: #E8EDEB;
-min-width: 36px;
-}
-.accomplishment-title { font-size: 17px; font-weight: 700; color: #1A1A1A; }
-.accomplishment-type { font-size: 12px; color: #97A89F; margin-top: 2px; }
-.accomplishment-outcome {
-display: flex; align-items: center; gap: 8px;
-background: #E8F2EF; border-radius: 6px; padding: 6px 12px;
-font-size: 13px; font-weight: 700; color: #18453B;
-}
-.accomplishment-toggle {
-width: 32px; height: 32px; border-radius: 50%;
-background: #E8EDEB; border: none; cursor: pointer;
-display: flex; align-items: center; justify-content: center;
-font-size: 14px; transition: all 0.2s; flex-shrink: 0;
-}
-.accomplishment.open .accomplishment-toggle {
-background: #18453B; color: white; transform: rotate(45deg);
-}
-.accomplishment-body {
-display: none; padding: 0 24px 24px;
-border-top: 1px solid #E8EDEB;
-background: #F5F8F7;
-}
-.accomplishment.open .accomplishment-body { display: block; }
-.sar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-.sar-card { background: #FFFFFF; border-radius: 8px; padding: 16px; border: 1px solid #E8EDEB; }
-.sar-label {
-font-size: 9px; font-weight: 700; color: #18453B;
-letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
-font-family: ‘DM Mono’, monospace;
-}
-.sar-text { font-size: 13px; color: #3C3C3C; line-height: 1.6; }
-
-/* TARGETING */
-.targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.targeting-col-title {
-font-size: 13px; font-weight: 700; color: #18453B;
-letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;
-font-family: ‘DM Mono’, monospace;
-}
-.role-item {
-padding: 16px 0; border-bottom: 1px solid #E8EDEB;
-display: flex; align-items: flex-start; gap: 12px;
-}
-.role-dot { width: 6px; height: 6px; border-radius: 50%; background: #18453B; margin-top: 8px; flex-shrink: 0; }
-.role-title { font-size: 15px; font-weight: 600; color: #1A1A1A; }
-.role-why { font-size: 13px; color: #97A89F; margin-top: 2px; }
-.market-pill {
-display: inline-flex; align-items: center; gap: 8px;
-border: 1px solid #E8EDEB; border-radius: 8px;
-padding: 12px 16px; margin: 6px; background: #FFFFFF;
-font-size: 14px; font-weight: 600; color: #3C3C3C;
-transition: all 0.2s;
-}
-.market-pill:hover { border-color: #18453B; color: #18453B; background: #E8F2EF; }
-.market-flag { font-size: 20px; }
-
-/* CONTACT */
-.contact-section {
-background: #18453B; max-width: 100%;
-padding: 80px 48px; text-align: center;
-}
-.contact-inner { max-width: 800px; margin: 0 auto; }
-.contact-title {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(36px, 5vw, 56px); font-weight: 900;
-color: #FFFFFF; margin-bottom: 16px; letter-spacing: -1px;
-}
-.contact-sub { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 40px; font-weight: 300; }
-.contact-grid { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-.contact-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.contact-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase; font-family: ‘DM Mono’, monospace; }
-.contact-value { font-size: 16px; font-weight: 600; color: #FFFFFF; }
-
-/* PROGRESS BARS */
-.skill-bar-container { margin-bottom: 16px; }
-.skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.timeline-dot { position: absolute; left: -35px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 2px solid #E8EDEB; }
+.timeline-item.active .timeline-dot { background: #18453B; border-color: #18453B; box-shadow: 0 0 0 4px #E8F2EF; width: 18px; height: 18px; left: -37px; top: 4px; }
+.timeline-period { font-family: 'DM Mono', monospace; font-size: 11px; color: #97A89F; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.timeline-role { font-size: 17px; font-weight: 700; color: #1A1A1A; margin-bottom: 3px; }
+.timeline-company { font-size: 13px; color: #18453B; font-weight: 600; margin-bottom: 10px; }
+.timeline-desc { font-size: 14px; color: #6B7B74; line-height: 1.7; margin-bottom: 10px; }
+.timeline-proof { display: inline-flex; align-items: center; background: #E8F2EF; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; color: #18453B; }
+.skills-box { background: #F2F8F6; border-radius: 16px; padding: 28px; }
+.skills-title { font-size: 12px; font-weight: 700; color: #18453B; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; font-family: 'DM Mono', monospace; }
+.skill-bar-container { margin-bottom: 14px; }
+.skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 5px; }
 .skill-bar-name { font-size: 13px; font-weight: 600; color: #3C3C3C; }
-.skill-bar-pct { font-size: 12px; font-weight: 700; color: #18453B; font-family: ‘DM Mono’, monospace; }
-.skill-bar-track { height: 6px; background: #E8EDEB; border-radius: 100px; overflow: hidden; }
-.skill-bar-fill {
-height: 100%; background: #18453B; border-radius: 100px;
-width: 0; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* SCROLL FADE IN */
-.fade-in {
-opacity: 0; transform: translateY(24px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-}
+.skill-bar-pct { font-size: 11px; font-weight: 700; color: #18453B; font-family: 'DM Mono', monospace; }
+.skill-bar-track { height: 5px; background: #E8EDEB; border-radius: 100px; overflow: hidden; }
+.skill-bar-fill { height: 100%; background: #18453B; border-radius: 100px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+.package-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; width: 100%; }
+.package-card { border: 1px solid #E8EDEB; border-radius: 16px; overflow: hidden; cursor: pointer; transition: all 0.3s; background: #FFFFFF; min-width: 0; width: 100%; }
+.package-card.expanded { grid-column: 1 / -1; }
+.pkg-header { background: #18453B; padding: 24px 20px; display: flex; align-items: flex-start; justify-content: space-between; }
+.pkg-header.green2 { background: #235C4E; }
+.pkg-header.green3 { background: #2D7A65; }
+.pkg-icon { font-size: 26px; margin-bottom: 10px; }
+.pkg-title { font-size: 18px; font-weight: 700; color: #FFFFFF; margin-bottom: 3px; }
+.pkg-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.pkg-btn { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.15); border: none; color: white; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pkg-body { padding: 20px; }
+.pkg-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #E8EDEB; }
+.pkg-row:last-child { border-bottom: none; }
+.pkg-label { font-size: 9px; font-weight: 700; color: #18453B; letter-spacing: 1.5px; text-transform: uppercase; min-width: 76px; padding-top: 2px; font-family: 'DM Mono', monospace; }
+.pkg-val { font-size: 13px; color: #3C3C3C; line-height: 1.5; }
+.pkg-expanded { display: none; padding: 0 20px 20px; background: #F2F8F6; border-top: 1px solid #E8EDEB; }
+.package-card.expanded .pkg-expanded { display: block; }
+.acc-list { display: flex; flex-direction: column; gap: 14px; }
+.acc { border: 1px solid #E8EDEB; border-radius: 12px; overflow: hidden; cursor: pointer; }
+.acc-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: #FFFFFF; }
+.acc-left { display: flex; align-items: center; gap: 14px; }
+.acc-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: #E8EDEB; min-width: 32px; }
+.acc-title { font-size: 16px; font-weight: 700; color: #1A1A1A; }
+.acc-type { font-size: 11px; color: #97A89F; margin-top: 2px; }
+.acc-right { display: flex; align-items: center; gap: 10px; }
+.acc-outcome { background: #E8F2EF; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 700; color: #18453B; white-space: nowrap; }
+.acc-toggle { width: 30px; height: 30px; border-radius: 50%; background: #E8EDEB; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.2s; flex-shrink: 0; }
+.acc.open .acc-toggle { background: #18453B; color: white; transform: rotate(45deg); }
+.acc-body { display: none; padding: 0 22px 20px; border-top: 1px solid #E8EDEB; background: #F5F8F7; }
+.acc.open .acc-body { display: block; }
+.sar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
+.sar-card { background: #FFFFFF; border-radius: 8px; padding: 14px; border: 1px solid #E8EDEB; }
+.sar-label { font-size: 9px; font-weight: 700; color: #18453B; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; font-family: 'DM Mono', monospace; }
+.sar-text { font-size: 12px; color: #3C3C3C; line-height: 1.6; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+.why-card { background: #F2F8F6; border-radius: 12px; padding: 22px; border-left: 4px solid #18453B; }
+.why-title { font-size: 10px; font-weight: 700; color: #18453B; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; font-family: 'DM Mono', monospace; }
+.why-text { font-size: 13px; color: #3C3C3C; line-height: 1.7; }
+.target-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.target-col-title { font-size: 12px; font-weight: 700; color: #18453B; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px; font-family: 'DM Mono', monospace; }
+.role-item { padding: 14px 0; border-bottom: 1px solid #E8EDEB; display: flex; align-items: flex-start; gap: 10px; }
+.role-dot { width: 6px; height: 6px; border-radius: 50%; background: #18453B; margin-top: 7px; flex-shrink: 0; }
+.role-title { font-size: 14px; font-weight: 600; color: #1A1A1A; }
+.role-why { font-size: 12px; color: #97A89F; margin-top: 2px; }
+.markets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.market-pill { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #E8EDEB; border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: #3C3C3C; }
+.salary-box { background: #F2F8F6; border-radius: 12px; padding: 22px; margin-bottom: 22px; }
+.salary-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; color: #18453B; letter-spacing: -1px; }
+.salary-sub { font-size: 13px; color: #6B7B74; margin-top: 3px; }
+.cert-box { background: #E8F2EF; border-radius: 8px; padding: 14px; display: flex; align-items: center; gap: 10px; }
+.cert-icon { font-size: 22px; }
+.cert-name { font-size: 13px; font-weight: 700; color: #18453B; }
+.cert-status { font-size: 11px; color: #6B7B74; margin-top: 1px; }
+.contact-wrap { background: #18453B; padding: 80px 64px; text-align: center; width: 100%; }
+.contact-inner { max-width: 700px; margin: 0 auto; }
+.contact-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 900; color: #FFFFFF; margin-bottom: 14px; letter-spacing: -1px; }
+.contact-sub { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 40px; font-weight: 300; }
+.contact-grid { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.contact-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.contact-label { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase; font-family: 'DM Mono', monospace; }
+.contact-value { font-size: 15px; font-weight: 600; color: #FFFFFF; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-nav { padding: 0 24px; }
-.nav-links { display: none; }
-.hero-inner { grid-template-columns: 1fr; gap: 40px; }
-.hero::before { display: none; }
-.stats-grid { grid-template-columns: repeat(2, 1fr); }
-.package-grid { grid-template-columns: 1fr; }
-.package-card.expanded { grid-column: span 1; }
-.sar-grid { grid-template-columns: 1fr; }
-.targeting-grid { grid-template-columns: 1fr; }
-section { padding: 60px 24px; }
-.impact { padding: 60px 24px; }
-.contact-section { padding: 60px 24px; }
+@media (max-width: 900px) {
+  .hero-wrap { flex-direction: column; }
+  .hero-left { padding: 60px 24px; }
+  .hero-right { width: 100%; padding: 40px 24px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .package-grid { grid-template-columns: 1fr; }
+  .package-card.expanded { grid-column: span 1; }
+  .sar-grid { grid-template-columns: 1fr; }
+  .story-grid { grid-template-columns: 1fr; }
+  .target-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .content-section { padding: 60px 24px; }
+  .impact-wrap { padding: 60px 24px; }
+  .contact-wrap { padding: 60px 24px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
 }
 </style>
-
 </head>
 <body>
-
-<!-- NAV -->
 
 <nav>
   <div class="nav-logo">TH</div>
@@ -430,676 +163,219 @@ section { padding: 60px 24px; }
   </ul>
 </nav>
 
-<!-- HERO -->
-
-<div class="hero" id="home">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Available — Detroit · Houston · Dallas · Phoenix</div>
-      <h1 class="hero-name">Tairra<br><span>Howard</span></h1>
-      <p class="hero-title">Strategy · Portfolio Management · Data Analytics · Process Improvement</p>
-      <p class="hero-statement">
-        I <strong>analyze business processes</strong>, identify inefficiencies, and work cross-functionally to <strong>design and implement solutions</strong> that improve performance and support strategic objectives — applying <strong>portfolio management discipline</strong>, <strong>data analytics</strong>, and proven <strong>project management methodology</strong> to deliver measurable, documented outcomes.
-v>
-prise Systems</div>
->
-tics</div>
->
-nuous Improvement</div>
-          <div class="credential-value">CIP1 — Kaizen Institute × Shell · Apr 2026 · A3 · Fishbone · SIPOC · TIMWOODI · Kanban · Process Maps</div>
-        </div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-icon">🎓</div>
-        <div>
-          <div class="credential-label">Education</div>
-          <div class="credential-value">B.A. Supply Chain — Michigan State University</div>
-        </div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-icon">📐</div>
-        <div>
-          <div class="credential-label">Project Management Certificate</div>
-          <div class="credential-value">Engineering Project Management — Rice University · 2024</div>
-        </div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-icon">🏆</div>
-        <div>
-          <div class="credential-label">Recognition</div>
-          <div class="credential-value">Top Contributor — 2025 Supply Chain Performance</div>
-        </div>
-      </div>
+<div class="hero-wrap" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Available — Detroit · Houston · Dallas · Phoenix</div>
+    <h1 class="hero-name">Tairra<br><span>Howard</span></h1>
+    <p class="hero-title">Strategy, Performance & Operations</p>
+    <p class="hero-statement">I <strong>analyze business processes</strong>, identify inefficiencies, and work cross-functionally to <strong>design and implement solutions</strong> that improve performance and support strategic objectives.</p>
+    <div class="hero-ctas">
+      <a href="#impact" class="btn-primary">See the Impact</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
+  </div>
+  <div class="hero-right">
+    <div class="credential-card"><div class="credential-icon">⚙️</div><div><div class="credential-label">Enterprise Systems</div><div class="credential-value">SAP SCM — 5+ Years · 100+ Sites</div></div></div>
+    <div class="credential-card"><div class="credential-icon">📊</div><div><div class="credential-label">Analytics</div><div class="credential-value">Power BI — Production Dashboards · Leadership Reporting</div></div></div>
+    <div class="credential-card"><div class="credential-icon">🎯</div><div><div class="credential-label">Continuous Improvement</div><div class="credential-value">CIP1 — Kaizen Institute · Apr 2026</div></div></div>
+    <div class="credential-card"><div class="credential-icon">🎓</div><div><div class="credential-label">Education</div><div class="credential-value">B.A. Supply Chain — Michigan State University</div></div></div>
+    <div class="credential-card"><div class="credential-icon">🏆</div><div><div class="credential-label">Recognition</div><div class="credential-value">Top Contributor — 2025 Supply Chain Performance</div></div></div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- IMPACT NUMBERS -->
-
-<div class="impact" id="impact">
+<div class="impact-wrap" id="impact">
   <div class="impact-inner">
     <div class="section-header">
-      <p class="section-eyebrow">Five Years · One Company · Documented Outcomes</p>
-      <h2 class="section-title" style="color:white">The Numbers</h2>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Five Years · One Company · Documented Outcomes</p>
+      <h2 class="section-title" style="color:#FFFFFF">The Numbers</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.65)">Every outcome is documented, validated, and attributable to real work — not estimates.</p>
     </div>
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-tag">Financial Impact — 2025</div>
-        <div class="stat-number green-accent" data-target="12.5" data-prefix="$" data-suffix="M+">$0</div>
-        <div class="stat-label">Gross Profit Margin</div>
-        <div class="stat-context">2025 · Supply chain optimization & sourcing discipline</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-tag">Financial Impact — 2025</div>
-        <div class="stat-number" data-target="16" data-prefix="$" data-suffix="M">$0</div>
-        <div class="stat-label">Incremental Profit</div>
-        <div class="stat-context">2025 · Data-driven analysis & execution programs</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-tag">Cost Reduction — 2025</div>
-        <div class="stat-number green-accent" data-target="1" data-prefix="$" data-suffix="M+">$0</div>
-        <div class="stat-label">Cost Savings</div>
-        <div class="stat-context">2025 · CI-led improvements & network redesign</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-tag">Operational Excellence</div>
-        <div class="stat-number" data-target="97" data-suffix="%">0</div>
-        <div class="stat-label">Peak OTIF Rate</div>
-        <div class="stat-context">1,000+ SKUs · multi-site · S&OP planning</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-tag">Process Improvement</div>
-        <div class="stat-number green-accent" data-target="40" data-suffix="%">0</div>
-        <div class="stat-label">Data Error Reduction</div>
-        <div class="stat-context">CIP1 Certified · documented · sustained</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-tag">Network Optimization</div>
-        <div class="stat-number" data-target="60" data-suffix="%">0</div>
-        <div class="stat-label">Lead Time Reduction</div>
-        <div class="stat-context">S&OP network redesign · implemented & monitored</div>
-      </div>
+      <div class="stat-card"><div class="stat-tag">Financial Impact — 2025</div><div class="stat-number accent" data-target="12.5" data-prefix="$" data-suffix="M+">$0</div><div class="stat-label">Gross Profit Margin</div><div class="stat-context">2025 · Supply chain optimization</div></div>
+      <div class="stat-card"><div class="stat-tag">Financial Impact — 2025</div><div class="stat-number" data-target="16" data-prefix="$" data-suffix="M">$0</div><div class="stat-label">Incremental Profit</div><div class="stat-context">2025 · Data-driven execution</div></div>
+      <div class="stat-card"><div class="stat-tag">Cost Reduction — 2025</div><div class="stat-number accent" data-target="1" data-prefix="$" data-suffix="M+">$0</div><div class="stat-label">Cost Savings</div><div class="stat-context">2025 · CI-led improvements</div></div>
+      <div class="stat-card"><div class="stat-tag">Operational Excellence</div><div class="stat-number" data-target="97" data-suffix="%">0</div><div class="stat-label">Peak OTIF Rate</div><div class="stat-context">1,000+ SKUs · multi-site</div></div>
+      <div class="stat-card"><div class="stat-tag">Process Improvement</div><div class="stat-number accent" data-target="40" data-suffix="%">0</div><div class="stat-label">Data Error Reduction</div><div class="stat-context">CIP1 · documented · sustained</div></div>
+      <div class="stat-card"><div class="stat-tag">Network Optimization</div><div class="stat-number" data-target="60" data-suffix="%">0</div><div class="stat-label">Lead Time Reduction</div><div class="stat-context">S&OP network redesign</div></div>
     </div>
   </div>
 </div>
 
-<!-- GROWTH STORY -->
-
-<section id="story">
+<div class="content-section" id="story">
   <div class="section-header fade-in">
-    <p class="section-eyebrow">Career Progression</p>
-    <h2 class="section-title">The Growth Story</h2>
-    <p class="section-sub">Title changed. Scope expanded. Trust compounded. Junior coordinator to the person everyone called when something complex was unowned.</p>
+    <p class="section-eyebrow" style="color:#18453B">Career Progression</p>
+    <h2 class="section-title" style="color:#1A1A1A">The Growth Story</h2>
+    <p class="section-sub" style="color:#6B7B74">Title changed. Scope expanded. Trust compounded. Junior coordinator to the person everyone called when something complex was unowned.</p>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+  <div class="story-grid">
     <div class="timeline">
-      <div class="timeline-item" data-delay="0">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">Aug 2020 – Jan 2022</div>
-        <div class="timeline-role">Supply Planning Coordinator</div>
-        <div class="timeline-company">Shell USA · Downstream Lubricants</div>
-        <div class="timeline-desc">Built the foundation — S&OP planning, 1,000+ SKUs, multi-plant coordination, demand signals, and stakeholder management. Learned how the system actually works.</div>
-        <div class="timeline-proof">↳ 97% OTIF · COVID recovery delivered</div>
-      </div>
-      <div class="timeline-item" data-delay="150">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">Jan 2022 – Mar 2023</div>
-        <div class="timeline-role">Supply Chain Operations Analyst</div>
-        <div class="timeline-company">Shell USA · Downstream Lubricants</div>
-        <div class="timeline-desc">Shifted from executing plans to analyzing performance and fixing problems. Investigated variances, led supplier programs, and started driving corrective action rather than just flagging it.</div>
-        <div class="timeline-proof">↳ ~25% supplier OT improvement</div>
-      </div>
-      <div class="timeline-item active" data-delay="300">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">Mar 2023 – Present</div>
-        <div class="timeline-role">Operations Analyst ★</div>
-        <div class="timeline-company">Shell USA · Downstream Lubricants</div>
-        <div class="timeline-desc">Expanded into SAP SCM governance across 100+ sites, Power BI production dashboards, MOC program leadership, and CIP1 delivery. Operating at the system level and leadership level simultaneously.</div>
-        <div class="timeline-proof">↳ $29M+ outcomes · Top Contributor 2025</div>
-      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">Aug 2020 – Jan 2022</div><div class="timeline-role">Supply Planning Coordinator</div><div class="timeline-company">Shell USA · Downstream Lubricants</div><div class="timeline-desc">Built the foundation — S&OP planning, 1,000+ SKUs, multi-plant coordination, demand signals, and stakeholder management.</div><div class="timeline-proof">↳ 97% OTIF · COVID recovery delivered</div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">Jan 2022 – Mar 2023</div><div class="timeline-role">Supply Chain Operations Analyst</div><div class="timeline-company">Shell USA · Downstream Lubricants</div><div class="timeline-desc">Shifted from executing plans to analyzing performance and fixing problems. Started driving corrective action rather than just flagging it.</div><div class="timeline-proof">↳ ~25% supplier OT improvement</div></div>
+      <div class="timeline-item active"><div class="timeline-dot"></div><div class="timeline-period">Mar 2023 – Present</div><div class="timeline-role">Operations Analyst ★</div><div class="timeline-company">Shell USA · Downstream Lubricants</div><div class="timeline-desc">Expanded into SAP SCM governance across 100+ sites, Power BI production dashboards, MOC program leadership, and CIP1 delivery.</div><div class="timeline-proof">↳ $29M+ outcomes · Top Contributor 2025</div></div>
     </div>
-    <div class="fade-in" style="padding-top:8px">
-      <div style="background:#F2F8F6;border-radius:16px;padding:32px;margin-bottom:24px">
-        <div style="font-size:13px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;font-family:'DM Mono',monospace">Core Capabilities</div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">SAP SCM Systems Governance</span><span class="skill-bar-pct">95%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">KPI Governance & Executive Reporting</span><span class="skill-bar-pct">93%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="93"></div></div>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">Power BI Dashboard Development</span><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">CI Leadership & Process Redesign</span><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">Cross-Functional Stakeholder Management</span><span class="skill-bar-pct">92%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar-header"><span class="skill-bar-name">Business Case Development & Financial Tracking</span><span class="skill-bar-pct">87%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
-        </div>
+    <div class="fade-in">
+      <div class="skills-box">
+        <div class="skills-title">Core Capabilities</div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">SAP SCM Systems Governance</span><span class="skill-bar-pct">95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div></div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">KPI Governance & Executive Reporting</span><span class="skill-bar-pct">93%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="93"></div></div></div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">Power BI Dashboard Development</span><span class="skill-bar-pct">90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">CI Leadership & Process Redesign</span><span class="skill-bar-pct">90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">Cross-Functional Stakeholder Management</span><span class="skill-bar-pct">92%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div></div>
+        <div class="skill-bar-container"><div class="skill-bar-header"><span class="skill-bar-name">Business Case & Financial Tracking</span><span class="skill-bar-pct">87%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div></div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="divider"></div>
 
-<!-- THE PACKAGE -->
-
-<section id="package">
+<div class="content-section" id="package">
   <div class="section-header fade-in">
-    <p class="section-eyebrow">Core Differentiators</p>
-    <h2 class="section-title">The Package</h2>
-    <p class="section-sub">Three disciplines that work together — and that most candidates won't bring as a set. Click any card to expand.</p>
+    <p class="section-eyebrow" style="color:#18453B">Core Differentiators</p>
+    <h2 class="section-title" style="color:#1A1A1A">The Package</h2>
+    <p class="section-sub" style="color:#6B7B74">Three disciplines that work together — and that most candidates won't bring as a set. Click any card to expand.</p>
   </div>
-  <div class="package-grid" id="packageGrid">
+  <div class="package-grid">
     <div class="package-card" onclick="togglePackage(this)">
-      <div class="package-card-header">
-        <div>
-          <div class="package-card-icon">⚙️</div>
-          <div class="package-card-title">SAP SCM</div>
-          <div class="package-card-sub">Enterprise Systems Depth</div>
-        </div>
-        <button class="package-expand-btn">+</button>
-      </div>
-      <div class="package-card-body">
-        <div class="package-detail-row">
-          <span class="package-detail-label">Experience</span>
-          <span class="package-detail-value">5+ years daily production use</span>
-        </div>
-        <div class="package-detail-row">
-          <span class="package-detail-label">Scope</span>
-          <span class="package-detail-value">100+ distribution sites governed</span>
-        </div>
-        <div class="package-detail-row">
-          <span class="package-detail-label">Functions</span>
-          <span class="package-detail-value">Master data · Plant config · T-zones · Routing · Lead times · STOs</span>
-        </div>
-      </div>
-      <div class="package-expanded-content">
-        <div style="padding-top:20px">
-          <p style="font-size:14px;color:#3C3C3C;line-height:1.7;margin-bottom:16px">SAP SCM depth means understanding the systems landscape from the inside — how data is structured, where gaps exist, and what configuration choices create downstream process complexity. Not system access. Deep operational knowledge built over five years of daily use across a Fortune 500 supply chain network.</p>
-          <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-            <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">Why it matters</div>
-            <p style="font-size:13px;color:#6B7B74;line-height:1.6">System design choices create operational outcomes downstream. Understanding this connection is what allows me to diagnose root causes that others attribute to process failures — when the real issue is often the data architecture.</p>
-          </div>
-        </div>
-      </div>
+      <div class="pkg-header"><div><div class="pkg-icon">⚙️</div><div class="pkg-title">SAP SCM</div><div class="pkg-sub">Enterprise Systems Depth</div></div><button class="pkg-btn">+</button></div>
+      <div class="pkg-body"><div class="pkg-row"><span class="pkg-label">Experience</span><span class="pkg-val">5+ years daily production use</span></div><div class="pkg-row"><span class="pkg-label">Scope</span><span class="pkg-val">100+ distribution sites governed</span></div><div class="pkg-row"><span class="pkg-label">Functions</span><span class="pkg-val">Master data · Plant config · T-zones · Routing · Lead times · STOs</span></div></div>
+      <div class="pkg-expanded"><div style="padding-top:16px"><p style="font-size:13px;color:#3C3C3C;line-height:1.7;margin-bottom:12px">SAP SCM depth means understanding the systems landscape from the inside — how data is structured, where gaps exist, and what configuration choices create downstream process complexity. Deep operational knowledge built over five years of daily use across a Fortune 500 supply chain network.</p><div style="background:#FFFFFF;border-radius:8px;padding:12px;border:1px solid #E8EDEB"><div style="font-size:10px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono',monospace">Why it matters</div><p style="font-size:12px;color:#6B7B74;line-height:1.6">System design choices create operational outcomes downstream. Understanding this allows me to diagnose root causes others miss.</p></div></div></div>
     </div>
-
-```
-<div class="package-card" onclick="togglePackage(this)">
-  <div class="package-card-header" style="background:#235C4E">
-    <div>
-      <div class="package-card-icon">🎯</div>
-      <div class="package-card-title">Continuous Improvement</div>
-      <div class="package-card-sub">CIP1 Certified — Applied</div>
+    <div class="package-card" onclick="togglePackage(this)">
+      <div class="pkg-header green2"><div><div class="pkg-icon">🎯</div><div class="pkg-title">Continuous Improvement</div><div class="pkg-sub">CIP1 Certified — Applied</div></div><button class="pkg-btn">+</button></div>
+      <div class="pkg-body"><div class="pkg-row"><span class="pkg-label">Credential</span><span class="pkg-val">Kaizen Institute × Shell · CIP1 · Apr 2026</span></div><div class="pkg-row"><span class="pkg-label">Method</span><span class="pkg-val">Lean · 5-Why · Root cause analysis · SIPOC · Process redesign</span></div><div class="pkg-row"><span class="pkg-label">Outcome</span><span class="pkg-val">40% error reduction · Documented · Sustained · Cross-functional</span></div></div>
+      <div class="pkg-expanded"><div style="padding-top:16px"><p style="font-size:13px;color:#3C3C3C;line-height:1.7;margin-bottom:12px">CIP1 means leading systematic improvement to a documented, sustained outcome — not a recommendation, not a pilot, but a delivered result that holds. Identify the problem. Design the solution. Manage the change. Prove it worked.</p><div style="background:#FFFFFF;border-radius:8px;padding:12px;border:1px solid #E8EDEB"><div style="font-size:10px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono',monospace">The proof</div><p style="font-size:12px;color:#6B7B74;line-height:1.6">Root cause analysis across 3–5 teams, process redesign, training documentation, cross-functional rollout, 40% reduction in data errors confirmed by KPIs.</p></div></div></div>
     </div>
-    <button class="package-expand-btn">+</button>
-  </div>
-  <div class="package-card-body">
-    <div class="package-detail-row">
-      <span class="package-detail-label">Credential</span>
-      <span class="package-detail-value">Kaizen Institute × Shell · CIP1 · Apr 2026</span>
-    </div>
-    <div class="package-detail-row">
-      <span class="package-detail-label">Method</span>
-      <span class="package-detail-value">A3 · Fishbone/Ishikawa · Causal Analysis · SIPOC · TIMWOODI · Kanban · Benefit/Effort Matrix · Process Maps · 5-Why · Root Cause Analysis</span>
-    </div>
-    <div class="package-detail-row">
-      <span class="package-detail-label">Outcome</span>
-      <span class="package-detail-value">40% error reduction · Documented · Sustained · Cross-functional adoption</span>
-    </div>
-  </div>
-  <div class="package-expanded-content">
-    <div style="padding-top:20px">
-      <p style="font-size:14px;color:#3C3C3C;line-height:1.7;margin-bottom:16px">CIP1 (Continuous Improvement Practitioner) means leading systematic improvement to a documented, sustained outcome — not a recommendation, not a pilot, but a delivered result that holds. Identify the problem. Design the solution. Manage the change. Prove it worked.</p>
-      <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-        <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">The proof</div>
-        <p style="font-size:13px;color:#6B7B74;line-height:1.6">My CIP1 project applied the full CI toolkit end-to-end: A3 problem solving, Fishbone/Ishikawa diagrams, causal analysis, SIPOC mapping, TIMWOODI waste identification, Kanban workflow management, benefit/effort matrix prioritization, and process maps for future-state design. Root cause analysis across 3–5 teams, cross-functional rollout without formal authority, and 40% reduction in data errors confirmed by KPIs. That's transformation leadership in practice.</p>
-      </div>
+    <div class="package-card" onclick="togglePackage(this)">
+      <div class="pkg-header green3"><div><div class="pkg-icon">📊</div><div class="pkg-title">Performance Management</div><div class="pkg-sub">KPI Governance · Power BI · Executive Reporting</div></div><button class="pkg-btn">+</button></div>
+      <div class="pkg-body"><div class="pkg-row"><span class="pkg-label">Tools</span><span class="pkg-val">Power BI (production) · SAP data · Excel</span></div><div class="pkg-row"><span class="pkg-label">Dashboards</span><span class="pkg-val">OTIF by site · Sourcing transparency · Financial impact</span></div><div class="pkg-row"><span class="pkg-label">Reporting</span><span class="pkg-val">Weekly senior leadership KPI meetings · Corrective action</span></div></div>
+      <div class="pkg-expanded"><div style="padding-top:16px"><p style="font-size:13px;color:#3C3C3C;line-height:1.7;margin-bottom:12px">Performance management means building the analytics infrastructure that makes problems visible, actionable, and trackable against business objectives. Not designing dashboards — deploying production tools that changed how leadership makes decisions.</p><div style="background:#FFFFFF;border-radius:8px;padding:12px;border:1px solid #E8EDEB"><div style="font-size:10px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono',monospace">What was built</div><p style="font-size:12px;color:#6B7B74;line-height:1.6">Two production Power BI dashboards now standard in weekly leadership meetings: OTIF by site week-over-week + sourcing transparency with financial impact per initiative.</p></div></div></div>
     </div>
   </div>
 </div>
-
-<div class="package-card" onclick="togglePackage(this)">
-  <div class="package-card-header" style="background:#2D7A65">
-    <div>
-      <div class="package-card-icon">📊</div>
-      <div class="package-card-title">Data Analytics & Performance</div>
-      <div class="package-card-sub">Power BI · KPI Design · SAP Data · Executive Reporting</div>
-    </div>
-    <button class="package-expand-btn">+</button>
-  </div>
-  <div class="package-card-body">
-    <div class="package-detail-row">
-      <span class="package-detail-label">Tools</span>
-      <span class="package-detail-value">Power BI (production) · SAP data · Excel</span>
-    </div>
-    <div class="package-detail-row">
-      <span class="package-detail-label">Dashboards</span>
-      <span class="package-detail-value">OTIF by site · Sourcing transparency · Financial impact tracking</span>
-    </div>
-    <div class="package-detail-row">
-      <span class="package-detail-label">Reporting</span>
-      <span class="package-detail-value">Weekly senior leadership KPI meetings · Corrective action recommendations</span>
-    </div>
-  </div>
-  <div class="package-expanded-content">
-    <div style="padding-top:20px">
-      <p style="font-size:14px;color:#3C3C3C;line-height:1.7;margin-bottom:16px">Performance management means building the analytics infrastructure that makes problems visible, actionable, and trackable against business objectives. Not designing dashboards — deploying production tools that changed how leadership makes decisions.</p>
-      <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-        <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">What was built</div>
-        <p style="font-size:13px;color:#6B7B74;line-height:1.6">Two production Power BI dashboards now used as standard tools in weekly leadership meetings: (1) OTIF performance by site week-over-week, (2) sourcing transparency with financial impact per initiative and open vs. closed volume.</p>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-</section>
 
 <div class="divider"></div>
 
-<!-- SIGNATURE WORK -->
-
-<section id="work">
+<div class="content-section" id="work">
   <div class="section-header fade-in">
-    <p class="section-eyebrow">Signature Accomplishments</p>
-    <h2 class="section-title">The Work</h2>
-    <p class="section-sub">Seven stories across seven dimensions — process design, data analysis, change management, SAP systems, performance reporting, crisis leadership, and financial governance. Click any to expand.</p>
+    <p class="section-eyebrow" style="color:#18453B">Signature Accomplishments</p>
+    <h2 class="section-title" style="color:#1A1A1A">The Work</h2>
+    <p class="section-sub" style="color:#6B7B74">Seven stories. Seven dimensions. Click any to expand.</p>
   </div>
-
-  <div class="fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px">
-    <div style="background:#F2F8F6;border-radius:12px;padding:24px;border-left:4px solid #18453B">
-      <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">I See What Others Miss</div>
-      <p style="font-size:14px;color:#3C3C3C;line-height:1.7">Whether it's invisible write-off data, a KPI reporting gap, or an intake process buried in emails — I identify where the business is losing value before anyone asks me to look.</p>
-    </div>
-    <div style="background:#F2F8F6;border-radius:12px;padding:24px;border-left:4px solid #18453B">
-      <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">I Build What's Missing</div>
-      <p style="font-size:14px;color:#3C3C3C;line-height:1.7">No playbook? I write one. No process? I design it. No dashboard? I build it. I don't wait for someone to hand me a structure — I create it and make it repeatable.</p>
-    </div>
-    <div style="background:#F2F8F6;border-radius:12px;padding:24px;border-left:4px solid #18453B">
-      <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Mono',monospace">I Make It Stick</div>
-      <p style="font-size:14px;color:#3C3C3C;line-height:1.7">Anyone can identify a problem. I drive adoption — training, documentation, stakeholder alignment, and KPI tracking — until the change is embedded and the outcome is confirmed.</p>
-    </div>
+  <div class="why-grid fade-in">
+    <div class="why-card"><div class="why-title">I See What Others Miss</div><div class="why-text">Whether it's invisible write-off data, a KPI reporting gap, or an intake process buried in emails — I identify where the business is losing value before anyone asks me to look.</div></div>
+    <div class="why-card"><div class="why-title">I Build What's Missing</div><div class="why-text">No playbook? I write one. No process? I design it. No dashboard? I build it. I don't wait for someone to hand me a structure — I create it and make it repeatable.</div></div>
+    <div class="why-card"><div class="why-title">I Make It Stick</div><div class="why-text">Anyone can identify a problem. I drive adoption — training, documentation, stakeholder alignment, and KPI tracking — until the change is embedded and the outcome is confirmed.</div></div>
   </div>
-
-  <div class="accomplishments-list">
-
-```
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">01</div>
-      <div>
-        <div class="accomplishment-title">CIP1 Project — Master Data Error Reduction</div>
-        <div class="accomplishment-type">Continuous Improvement · Process Design · Change Management</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">40% Error Reduction</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Chronic master data errors across sourcing and logistics workflows were compounding into planning inaccuracies and execution failures. The problem had been ongoing without a structured solution.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Owned end-to-end — root cause analysis across 3–5 teams, future-state process design, training and implementation documentation, cross-functional rollout without formal authority, and KPI measurement framework for adoption monitoring.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">40% reduction in data errors. Documented, sustained, confirmed by KPIs. Process adopted organization-wide. CIP1 (Continuous Improvement Practitioner) certification completed April 2026.</div></div>
-    </div>
+  <div class="acc-list">
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">01</div><div><div class="acc-title">CIP1 Project — Master Data Error Reduction</div><div class="acc-type">Continuous Improvement · Process Design · Change Management</div></div></div><div class="acc-right"><div class="acc-outcome">40% Error Reduction</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Chronic master data errors across sourcing and logistics workflows were compounding into planning inaccuracies and execution failures. Ongoing without a structured solution.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Owned end-to-end — root cause analysis across 3–5 teams, future-state process design, training documentation, cross-functional rollout without formal authority, and KPI measurement framework.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">40% reduction in data errors. Documented, sustained, confirmed by KPIs. Process adopted organization-wide. CIP1 certification completed April 2026.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">02</div><div><div class="acc-title">DFOA Transportation Zone Simplification (SAP)</div><div class="acc-type">SAP Systems · Process Standardization · Financial Impact</div></div></div><div class="acc-right"><div class="acc-outcome">$100K+ Loss Prevented</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Canada's DFOA rates were inconsistent — no standard method for classifying customers was causing disputes and over $100K in incorrect payments.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Designed a standardized zoning model using FSA codes, aligned rates across three zones per province, embedded directly into SAP, created governance documentation (QRG), and trained Customer Operations.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Prevented $100K+ in losses. Eliminated rate disputes. Created a repeatable, governed process embedded in SAP. Improved customer experience across Canada.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">03</div><div><div class="acc-title">Past-Due Order Backlog Reduction</div><div class="acc-type">Crisis Management · Stakeholder Alignment · Operations Recovery</div></div></div><div class="acc-right"><div class="acc-outcome">Resolved in 4 Weeks</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">An RDC was experiencing a significant backlog of past-due orders — creating service failures, internal and external pressure, and no alignment across teams.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Led daily calls asking WHY for each stuck order. Prioritized by customer impact. Built a centralized tracker for cross-team accountability and trained a new employee to own the process.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Backlog reduced significantly in four working weeks. Service levels improved. Seamless handoff due to documented process.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">04</div><div><div class="acc-title">Inventory Variance Resolution (SAP & RDC)</div><div class="acc-type">Data Integrity · SAP Correction · Root Cause Analysis</div></div></div><div class="acc-right"><div class="acc-outcome">SAP Data Restored</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">An RDC was experiencing frequent inventory discrepancies between SAP and physical stock — causing order cancellations, poor customer experiences, and loss of confidence in system data.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Analyzed variance trends prioritizing high-variance SKUs first. Conducted daily cycle counts, corrected SAP records, and implemented proper write-off documentation.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Inventory accuracy restored. Order cancellations reduced. SAP data reliable. Confidence in system data re-established across the site.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">05</div><div><div class="acc-title">KPI Tracker & Performance Visibility Framework</div><div class="acc-type">Performance Management · Power BI · Executive Reporting</div></div></div><div class="acc-right"><div class="acc-outcome">Reactive → Data-Driven</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Team lacked a centralized way to track KPIs — delayed issue identification and no visibility for leadership to make proactive decisions.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Partnered with leadership to define critical KPIs. Pulled data from SAP, Power BI, and internal systems. Built a centralized tracker and established a weekly performance review cadence.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Leadership gained real-time visibility. Team shifted from reactive firefighting to data-driven performance management.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">06</div><div><div class="acc-title">No Playbook — Transportation Request Intake Process</div><div class="acc-type">Process Creation · Intake Design · Ambiguity to Structure</div></div></div><div class="acc-right"><div class="acc-outcome">Zero Missed Requests</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Stepped into MDA role with no standard process — transportation zone requests came in through emails inconsistently, got missed regularly, and there was no central way to track or prioritize the work.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Designed and implemented a web form that standardized intake, captured required data upfront, routed all requests to a single queue with ID numbers, and gave stakeholders full visibility from submission to close.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Missed requests eliminated. Workload became transparent. Data-driven insights unlocked. Process became the foundation for the CIP1 improvement project.</div></div></div></div></div>
+    <div class="acc" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-left"><div class="acc-num">07</div><div><div class="acc-title">Customer Claim Governance & Cost Control</div><div class="acc-type">Financial Governance · Process Design · Stakeholder Accountability</div></div></div><div class="acc-right"><div class="acc-outcome">Overpayments Prevented</div><button class="acc-toggle">+</button></div></div><div class="acc-body"><div class="sar-grid"><div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">High-value customer claims were managed through Outlook with no standard process — missed deadlines, inconsistent handling, poor visibility, and growing customer dissatisfaction.</div></div><div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Moved the process into Smartsheet with automated deadlines, alerts, and defined ownership across teams. Created clear accountability where none had existed.</div></div><div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">No overlooked claims. Turnaround improved. Unnecessary returns reduced. Overpayments prevented. Financial accuracy improved.</div></div></div></div></div>
   </div>
 </div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">02</div>
-      <div>
-        <div class="accomplishment-title">DFOA Transportation Zone Simplification (SAP)</div>
-        <div class="accomplishment-type">SAP Systems · Process Standardization · Financial Impact</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">$100K+ Loss Prevented</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Canada's DFOA rates were inconsistent due to no standard method for classifying customers — causing disputes, confusion, and over $100K in incorrect payments across the network.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Designed a standardized zoning model using FSA codes, aligned rates and delivery timelines across three zones per province, embedded the framework directly into SAP, created governance documentation (QRG), and trained Customer Operations on execution.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Prevented $100K+ in losses. Eliminated rate disputes. Created a repeatable, governed process embedded in SAP. Improved customer experience across the Canadian network.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">03</div>
-      <div>
-        <div class="accomplishment-title">Past-Due Order Backlog Reduction</div>
-        <div class="accomplishment-type">Crisis Management · Stakeholder Alignment · Operations Recovery</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">Resolved in 4 Weeks</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">An RDC was experiencing a significant backlog of past-due orders — creating service failures, internal and external pressure, and a lack of alignment across all teams involved. No one was owning the resolution.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Led daily calls asking WHY for each stuck order. Prioritized by customer impact and operational constraints. Built a centralized tracker for cross-team accountability and trained a new employee to own the process going forward.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Backlog reduced significantly in four working weeks. Service levels improved. Seamless handoff due to documented process. Demonstrated ability to stabilize a broken operation quickly and leave it better than found.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">04</div>
-      <div>
-        <div class="accomplishment-title">Inventory Variance Resolution (SAP & RDC)</div>
-        <div class="accomplishment-type">Data Integrity · SAP Correction · Root Cause Analysis</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">SAP Data Restored</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">An RDC was experiencing frequent inventory discrepancies between SAP and physical stock — causing order cancellations, poor customer experiences, and complete loss of confidence in system data.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Analyzed variance trends prioritizing high-variance SKUs first. Conducted daily cycle counts, corrected SAP records, and implemented proper write-off documentation to restore and maintain data integrity across the site.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Inventory accuracy restored. Order cancellations reduced. SAP data reliable. Confidence in system data re-established. Foundational to ongoing operational performance at the site.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">05</div>
-      <div>
-        <div class="accomplishment-title">KPI Tracker & Performance Visibility Framework</div>
-        <div class="accomplishment-type">Performance Management · Power BI · Executive Reporting</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">Reactive → Data-Driven</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Team lacked a centralized way to track KPIs — delayed issue identification and no visibility for leadership to make proactive decisions. Performance management was reactive firefighting.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Partnered with leadership to define critical KPIs. Pulled data from SAP, Power BI, and internal systems. Built a centralized KPI tracker and established a weekly performance review cadence with actionable insights.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Leadership gained real-time visibility into operational risks and opportunities. Team shifted from reactive firefighting to data-driven performance management. Issues caught earlier, decisions made faster.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">06</div>
-      <div>
-        <div class="accomplishment-title">No Playbook — Transportation Request Intake Process</div>
-        <div class="accomplishment-type">Process Creation · Intake Design · Ambiguity to Structure</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">Zero Missed Requests</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">Stepped into MDA role with no standard process for transportation zone requests — they came in through emails inconsistently, got missed regularly, and there was no central way to track, prioritize, or analyze the work.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Designed and implemented a web form that standardized intake, captured required data upfront, routed all requests to a single queue with ID numbers, and gave stakeholders full visibility from submission to close.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">Missed requests eliminated. Workload became manageable and transparent. Data-driven insights on request trends unlocked. Process became the foundation for the CIP1 improvement project.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="accomplishment" onclick="toggleAccomplishment(this)">
-  <div class="accomplishment-header">
-    <div class="accomplishment-header-left">
-      <div class="accomplishment-num">07</div>
-      <div>
-        <div class="accomplishment-title">Customer Claim Governance & Cost Control</div>
-        <div class="accomplishment-type">Financial Governance · Process Design · Stakeholder Accountability</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="accomplishment-outcome">Overpayments Prevented</div>
-      <button class="accomplishment-toggle">+</button>
-    </div>
-  </div>
-  <div class="accomplishment-body">
-    <div class="sar-grid">
-      <div class="sar-card"><div class="sar-label">Situation</div><div class="sar-text">High-value customer overage and shortage claims were managed through Outlook with no standard process — missed deadlines, inconsistent handling, poor visibility, and growing customer dissatisfaction.</div></div>
-      <div class="sar-card"><div class="sar-label">Action</div><div class="sar-text">Moved the process into Smartsheet with automated deadlines, alerts for submission and resolution, and defined ownership across teams. Created clear accountability where none had existed.</div></div>
-      <div class="sar-card"><div class="sar-label">Result</div><div class="sar-text">No overlooked claims. Turnaround time improved. Unnecessary returns reduced. Overpayments prevented. Financial accuracy improved. A chaotic email-based process became a governed, accountable system.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-</section>
 
 <div class="divider"></div>
 
-<!-- TARGETING -->
-
-<section id="targeting">
+<div class="content-section" id="targeting">
   <div class="section-header fade-in">
-    <p class="section-eyebrow">Job Search</p>
-    <h2 class="section-title">What I'm Targeting</h2>
-    <p class="section-sub">Specific about role type, level, and market. Not looking for a lateral move.</p>
+    <p class="section-eyebrow" style="color:#18453B">Job Search</p>
+    <h2 class="section-title" style="color:#1A1A1A">What I'm Targeting</h2>
+    <p class="section-sub" style="color:#6B7B74">Specific about role type, level, and market. Not looking for a lateral move.</p>
   </div>
-  <div class="fade-in" style="background:#F2F8F6;border-radius:16px;padding:32px;margin-bottom:48px;border-left:6px solid #18453B">
-    <div style="font-size:11px;font-weight:700;color:#18453B;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;font-family:'DM Mono',monospace">What I Bring — Transferable Across Industries</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-        <div style="font-size:12px;font-weight:700;color:#18453B;margin-bottom:8px">📊 Data Analytics</div>
-        <div style="font-size:13px;color:#3C3C3C;line-height:1.6">Power BI production dashboards · SAP data architecture · KPI design & governance · Executive reporting · Trend analysis & corrective action</div>
-      </div>
-      <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-        <div style="font-size:12px;font-weight:700;color:#18453B;margin-bottom:8px">📋 Portfolio & Project Management</div>
-        <div style="font-size:13px;color:#3C3C3C;line-height:1.6">Engineering PM Certificate — Rice University · Initiative intake, prioritization & governance · Milestone tracking · Value realization · Executive steering committee support</div>
-      </div>
-      <div style="background:#FFFFFF;border-radius:8px;padding:16px;border:1px solid #E8EDEB">
-        <div style="font-size:12px;font-weight:700;color:#18453B;margin-bottom:8px">🎯 CI Methodology</div>
-        <div style="font-size:13px;color:#3C3C3C;line-height:1.6">A3 · Fishbone · Causal Analysis · SIPOC · TIMWOODI · Kanban · Benefit/Effort Matrix · Process Maps · Root Cause Analysis · CIP1 Certified</div>
-      </div>
-    </div>
-  <div style="display:none">
-  </div>
-  </div><div class="targeting-grid">
+  <div class="target-grid">
     <div class="fade-in">
-      <div class="targeting-col-title">Target Role Types</div>
-          <div class="role-why">MOC programs, Continuous Improvement Practitioner (CIP1) CI, and change management track record.</div>
-        </div>
-      </div>
-      <div class="role-item">
-        <div class="role-dot"></div>
-        <div>
-          <div class="role-title">Supply Chain Strategy Analyst</div>
-          <div class="role-why">SAP + operational foundation meets strategic application.</div>
-        </div>
-      </div>
+      <div class="target-col-title">Target Role Types</div>
+      <div class="role-item"><div class="role-dot"></div><div><div class="role-title">Supply Chain Portfolio Manager</div><div class="role-why">Initiative governance, financial tracking, executive reporting — my core.</div></div></div>
+      <div class="role-item"><div class="role-dot"></div><div><div class="role-title">Business Performance Analyst</div><div class="role-why">Data to decision to outcome. Where I operate naturally.</div></div></div>
+      <div class="role-item"><div class="role-dot"></div><div><div class="role-title">PMO / Project Controls Analyst</div><div class="role-why">Structured execution, milestone tracking, CI leadership.</div></div></div>
+      <div class="role-item"><div class="role-dot"></div><div><div class="role-title">Business Transformation Specialist</div><div class="role-why">MOC programs, CIP1, and change management track record.</div></div></div>
+      <div class="role-item"><div class="role-dot"></div><div><div class="role-title">Supply Chain Strategy Analyst</div><div class="role-why">SAP + operational foundation meets strategic application.</div></div></div>
     </div>
     <div class="fade-in">
-      <div class="targeting-col-title">Target Markets</div>
-      <div style="display:flex;flex-wrap:wrap;margin:-6px;margin-bottom:32px">
-        <div class="market-pill"><span class="market-flag">🏙️</span>Metro Detroit, MI</div>
-        <div class="market-pill"><span class="market-flag">🤠</span>Dallas / Fort Worth, TX</div>
-        <div class="market-pill"><span class="market-flag">🌵</span>Phoenix, AZ</div>
-        <div class="market-pill"><span class="market-flag">🛢️</span>Houston, TX</div>
+      <div class="target-col-title">Target Markets</div>
+      <div class="markets">
+        <div class="market-pill">🏙️ Metro Detroit, MI</div>
+        <div class="market-pill">🤠 Dallas / Fort Worth, TX</div>
+        <div class="market-pill">🌵 Phoenix, AZ</div>
+        <div class="market-pill">🛢️ Houston, TX</div>
       </div>
-      <div class="targeting-col-title" style="margin-top:16px">Salary Target</div>
-      <div style="background:#F2F8F6;border-radius:12px;padding:24px;margin-bottom:24px">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#18453B;letter-spacing:-1px">$130K–$160K</div>
-        <div style="font-size:14px;color:#6B7B74;margin-top:4px">Base salary · plus bonus · full-time only</div>
-      </div>
-      <div class="targeting-col-title">Currently Pursuing</div>
-      <div style="background:#E8F2EF;border-radius:8px;padding:16px;display:flex;align-items:center;gap:12px">
-        <div style="font-size:24px">📋</div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#18453B">Microsoft Power BI Data Analyst (PL-300)</div>
-          <div style="font-size:12px;color:#6B7B74;margin-top:2px">In progress · actively studying</div>
-        </div>
-      </div>
+      <div class="target-col-title">Salary Target</div>
+      <div class="salary-box"><div class="salary-num">$130K–$160K</div><div class="salary-sub">Base salary · plus bonus · full-time only</div></div>
+      <div class="target-col-title">Currently Pursuing</div>
+      <div class="cert-box"><div class="cert-icon">📋</div><div><div class="cert-name">Microsoft Power BI Data Analyst (PL-300)</div><div class="cert-status">In progress · actively studying</div></div></div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- CONTACT -->
-
-<div class="contact-section" id="contact">
+<div class="contact-wrap" id="contact">
   <div class="contact-inner">
     <h2 class="contact-title">Let's Connect</h2>
     <p class="contact-sub">I've shown you the work. Now let's talk about what I can build for you.</p>
     <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">tiarrahoward29@gmail.com</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">313.848.9154</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Open To</div>
-        <div class="contact-value">Detroit · Houston · Dallas · Phoenix</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Availability</div>
-        <div class="contact-value">Full-Time · Immediate</div>
-      </div>
+      <div class="contact-item"><div class="contact-label">Email</div><div class="contact-value">tiarrahoward29@gmail.com</div></div>
+      <div class="contact-item"><div class="contact-label">Phone</div><div class="contact-value">313.848.9154</div></div>
+      <div class="contact-item"><div class="contact-label">Open To</div><div class="contact-value">Detroit · Houston · Dallas · Phoenix</div></div>
+      <div class="contact-item"><div class="contact-label">Availability</div><div class="contact-value">Full-Time · Immediate</div></div>
     </div>
   </div>
 </div>
 
 <script>
-  // COUNTER ANIMATION
-  function animateCounter(el) {
-    const target = parseFloat(el.dataset.target);
-    const prefix = el.dataset.prefix || '';
-    const suffix = el.dataset.suffix || '';
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      const display = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
-      el.textContent = prefix + display + suffix;
-    }, duration / steps);
-  }
-
-  // SCROLL OBSERVER
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Counter animation
-        if (entry.target.dataset.target) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-        // Skill bars
-        const bars = entry.target.querySelectorAll('.skill-bar-fill');
-        bars.forEach(bar => {
-          setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
-        });
-        // Timeline items
-        const items = entry.target.querySelectorAll('.timeline-item');
-        items.forEach((item, i) => {
-          setTimeout(() => item.classList.add('visible'), i * 150);
-        });
-      }
-    });
-  }, { threshold: 0.1 });
-
-  // Observe stat numbers
-  document.querySelectorAll('.stat-number[data-target]').forEach(el => observer.observe(el));
-
-  // Observe fade-in elements
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Observe skill bar containers
-  document.querySelectorAll('.skill-bar-container').forEach(el => {
-    const barObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target.querySelector('.skill-bar-fill');
-          if (fill) setTimeout(() => { fill.style.width = fill.dataset.width + '%'; }, 200);
-          barObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    barObserver.observe(el);
-  });
-
-  // Observe timeline
-  const timelineSection = document.querySelector('.timeline');
-  if (timelineSection) observer.observe(timelineSection);
-
-  // PACKAGE TOGGLE
-  function togglePackage(card) {
-    const isExpanded = card.classList.contains('expanded');
-    document.querySelectorAll('.package-card').forEach(c => {
-      c.classList.remove('expanded');
-      c.querySelector('.package-expand-btn').textContent = '+';
-    });
-    if (!isExpanded) {
-      card.classList.add('expanded');
-      card.querySelector('.package-expand-btn').textContent = '−';
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const steps = 60;
+  const increment = target / steps;
+  let current = 0;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) { current = target; clearInterval(timer); }
+    const display = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
+    el.textContent = prefix + display + suffix;
+  }, 2000 / steps);
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if (entry.target.dataset.target) { animateCounter(entry.target); observer.unobserve(entry.target); }
+      entry.target.querySelectorAll('.skill-bar-fill').forEach(b => { setTimeout(() => { b.style.width = b.dataset.width + '%'; }, 200); });
+      entry.target.querySelectorAll('.timeline-item').forEach((item, i) => { setTimeout(() => item.classList.add('visible'), i * 150); });
     }
-  }
-
-  // ACCOMPLISHMENT TOGGLE
-  function toggleAccomplishment(item) {
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.accomplishment').forEach(a => a.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // NAV ACTIVE STATE
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 100) current = section.id;
-    });
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === '#' + current ? '#18453B' : '';
-    });
   });
+}, { threshold: 0.1 });
+document.querySelectorAll('.stat-number[data-target]').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.skill-bar-container').forEach(el => {
+  const o = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { const f = e.target.querySelector('.skill-bar-fill'); if (f) setTimeout(() => { f.style.width = f.dataset.width + '%'; }, 200); o.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  o.observe(el);
+});
+const tl = document.querySelector('.timeline');
+if (tl) observer.observe(tl);
+function togglePackage(card) {
+  const isExp = card.classList.contains('expanded');
+  document.querySelectorAll('.package-card').forEach(c => { c.classList.remove('expanded'); c.querySelector('.pkg-btn').textContent = '+'; });
+  if (!isExp) { card.classList.add('expanded'); card.querySelector('.pkg-btn').textContent = '−'; }
+}
+function toggleAcc(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.acc').forEach(a => a.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(l => { l.style.color = l.getAttribute('href') === '#' + current ? '#18453B' : ''; });
+});
 </script>
 
 </body>
